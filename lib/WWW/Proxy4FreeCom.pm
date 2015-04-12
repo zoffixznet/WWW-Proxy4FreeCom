@@ -199,7 +199,7 @@ set to as well as C<agent> argument is set to mimic Firefox.
 
     ->new( debug => 1 );
 
-When C<get_list()> is called any unsuccessfull page retrievals will be
+When C<get_list()> is called any unsuccessful page retrievals will be
 silently ignored. Setting C<debug> argument to a true value will C<carp()>
 any network errors if they occur.
 
@@ -262,7 +262,7 @@ return a human-readable error message explaining the failure.
 
     my $last_list_ref = $prox->list;
 
-Must be called after a successfull call to C<get_list()>. Takes
+Must be called after a successful call to C<get_list()>. Takes
 no arguments, returns the same arrayref of hashrefs as
 last call to C<get_list()> returned.
 
