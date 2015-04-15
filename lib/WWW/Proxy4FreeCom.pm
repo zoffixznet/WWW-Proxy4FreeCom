@@ -262,9 +262,10 @@ return a human-readable error message explaining the failure.
 
     my $last_list_ref = $prox->list;
 
-Must be called after a successful call to C<get_list()>. Takes
-no arguments, returns the same arrayref of hashrefs as
-last call to C<get_list()> returned.
+Contains cached value returned from most recent C<get_list()> call.
+In other words, this method should be called after a successful
+response from C<get_list()>. Takes no arguments, returns the
+same arrayref of hashrefs structure as C<get_list()>.
 
 =head2 C<ua>
 
