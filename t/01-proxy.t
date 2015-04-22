@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 21;
+use Test::More;
 
 BEGIN {
     use_ok('Carp');
@@ -38,7 +38,8 @@ SKIP: {
                 . 'Please inform the author at zoffix@cpan.org'
             );
         }
-        diag "Got error: " . $o->error and skip 'Some error', 7;
+        diag "Got error: " . $o->error;
+        skip 'Some error', 12;
     }
 
     diag "\nGot " . @$list_ref . " proxies in a list\n\n";
@@ -87,3 +88,5 @@ SKIP: {
         is ( $test{$_}, 0, "test for $_ failed $test{$_} times" );
     }
 }
+
+done_testing();
