@@ -71,6 +71,9 @@ sub get_list {
         else {
             $self->debug
                 and carp "Page $_: " . $response->status_line;
+            return $self->_set_error(
+                'Network error: ' . $response->status_line
+            );
         }
     }
 
