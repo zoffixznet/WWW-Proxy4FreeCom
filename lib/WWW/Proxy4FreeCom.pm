@@ -85,13 +85,14 @@ sub _parse_proxy_list {
     eval {
         for my $tr ( $dom->find('.proxy-list tbody tr')->each ) {
             my %tds;
-            @tds{qw/domain  features_hian  features_ssl/}
-            = ( $tr->find('td')->each )[1, 9, 10];
 
             @tds{qw/
-                rating  country  access_time
+                country  rating  access_time
                 uptime  online_since  last_test
             /} = map "$_", map $_->text, ( $tr->find('td')->each )[ 3..8 ];
+
+            @tds{qw/domain  features_hian  features_ssl/}
+            = ( $tr->find('td')->each )[1, 9, 10];
 
             $tds{domain} = $tds{domain}->find('a')->map('text')->join;
             $tds{ $_ } = $tds{ $_ } =~ /on/ ? 1 : 0

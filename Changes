@@ -1,5 +1,8 @@
 Revision history for WWW-Proxy4FreeCom
 
+1.004002   2015-04-21
+        - Updated parser, due to the new format of the site (Issue #2)
+
 1.004001   2015-04-11
         - Fixed complete breakdown due to new version of
            the parser released
